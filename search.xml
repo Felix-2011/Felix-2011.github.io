@@ -87,7 +87,7 @@
 <p>修改注册表将发布到 Hexo 的功能添加到鼠标右键文件的右键菜单中，同时编写 bat 脚本调用 python 程序发布</p>
 <p><code>PostToHexo.bat</code></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">cd /d %~dp0</span><br><span class="line">echo 输入类别(默认为None)</span><br><span class="line">set /p type=</span><br><span class="line">if &quot;%type%&quot;==&quot;&quot; set type=None</span><br><span class="line">echo 是否支持数学公式(默认为false)</span><br><span class="line">set /p mathjax=</span><br><span class="line">if &quot;%mathjax%&quot;==&quot;&quot; set mathjax=false</span><br><span class="line">set file=&quot;%1&quot;</span><br><span class="line">echo 发布成功</span><br><span class="line">cmd /c python PostToHexo.py %1 %type% %mathjax%</span><br></pre></td></tr></table></figure>
-<p>修改注册表：win+R 输入regedit，进入路径 <code>计算机\HKEY_CLASSES_ROOT\*\shell</code>，新建项并命名为 <code>Post</code>，双击 <code>默认</code>项，添加数值数据 <code>PostToHexo</code>，该名称为右键文件时的右键菜单中显示的名字；在 <code>Post</code> 下再次新建项 <code>command</code>，双击 <code>默认</code>项，添加数值数据为 <code>PostToHexo.bat</code> 文件所在路径，并加上 <code>”%1&quot;</code>，最终结果为：<code>&quot;发布到Hexo.bat&quot; &quot;%1&quot;</code>。</p>
+<p>修改注册表：win+R 输入regedit，进入路径 <code>计算机\HKEY_CLASSES_ROOT\*\shell</code>，新建项并命名为 <code>Post</code>，双击 <code>默认</code>项，添加数值数据 <code>PostToHexo</code>，该名称为右键文件时的右键菜单中显示的名字；在 <code>Post</code> 下再次新建项 <code>command</code>，双击 <code>默认</code>项，添加数值数据为 <code>PostToHexo.bat</code> 文件所在路径，并加上 <code>”%1&quot;</code>，最终结果为：<code>&quot;PostToHexo.bat&quot; &quot;%1&quot;</code>。</p>
 ]]></content>
       <categories>
         <category>None</category>
