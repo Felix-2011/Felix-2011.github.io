@@ -22,17 +22,17 @@
 
   <meta name="description" content="&amp;emsp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【关系数据理论】1.关系数据结构">
-<meta property="og:url" content="https://toki2011.github.io/2023/03/12/%E3%80%90%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA%E3%80%911.%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:title" content="【关系数据理论】2.数据依赖">
+<meta property="og:url" content="https://toki2011.github.io/2023/03/12/%E3%80%90%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA%E3%80%912.%E6%95%B0%E6%8D%AE%E4%BE%9D%E8%B5%96/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="&amp;emsp;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-12T13:24:21.573Z">
-<meta property="article:modified_time" content="2023-03-12T13:24:21.573Z">
+<meta property="article:published_time" content="2023-03-12T13:33:12.800Z">
+<meta property="article:modified_time" content="2023-03-12T13:34:26.781Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://toki2011.github.io/2023/03/12/%E3%80%90%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA%E3%80%911.%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+<link rel="canonical" href="https://toki2011.github.io/2023/03/12/%E3%80%90%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA%E3%80%912.%E6%95%B0%E6%8D%AE%E4%BE%9D%E8%B5%96/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>【关系数据理论】1.关系数据结构 | Hexo</title>
+  <title>【关系数据理论】2.数据依赖 | Hexo</title>
   
 
 
@@ -183,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://toki2011.github.io/2023/03/12/%E3%80%90%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA%E3%80%911.%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+    <link itemprop="mainEntityOfPage" href="https://toki2011.github.io/2023/03/12/%E3%80%90%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA%E3%80%912.%E6%95%B0%E6%8D%AE%E4%BE%9D%E8%B5%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -196,7 +196,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【关系数据理论】1.关系数据结构
+          【关系数据理论】2.数据依赖
         </h1>
 
         <div class="post-meta">
@@ -223,32 +223,31 @@
       
         <p>&emsp;</p>
 <span id="more"></span>
-<h1 id="一、关系的数学定义"><a href="#一、关系的数学定义" class="headerlink" title="一、关系的数学定义"></a>一、关系的数学定义</h1><p>现实世界中存在的可以相互区分的事物或概念称为实体（Entity）。在关系模型中，无论是实体集，还是实体集之间的联系均有单一的关系表示。由于关系模型是建立在集合代数基础上的，因而一般从集合论角度对关系数据结构进行定义。</p>
-<p><strong>1. 域（Domain）的定义</strong></p>
-<p>域（Domain）是一组具有相同数据类型的值的集合。</p>
-<p>例如，整数、正数、负数、｛0、1｝等，都可以作为域。</p>
-<p><strong>2. 笛卡尔积（Cartesian Product）的定义</strong></p>
-<p>给定一组域 $D_1, D_2, \cdots, D_n$，这些域中可以有相同的部分，则 $D_1, D_2, \cdots, D_n$  的笛卡尔积（Cartesian Product）为</p>
-<p>$D_1\times D_2\times \cdots \times D_n=\{ (d_1,d_2,\cdots,d_n)|d_i\in D_i, i=1, 2, \cdots, n \}$</p>
-<p>式中，每一个元素 $(d_1, d_2, \cdots, d_n)$ 为一个 𝘯 元组（n-Tuple），简称元组（Tuple）。元素中的每一个值 $d_i$ 称作一个分量（Component）。</p>
-<p><strong>3. 关系（Relation）的定义</strong></p>
-<p>$D_1\times D_2\times \cdots \times D_n$ 的子集称为在域 $D_1, D_2, \cdots, D_n$ 上的关系（Relation），表示为</p>
-<p>$R(D_1, D_2, \cdots, D_n)$</p>
-<p>式中，𝘙 表示关系的名字，𝘯 是关系的目或度（Degree）。当 𝘯 = 1 时，称该关系为单元关系（Unary Relation）；当 𝘯 = 2 时，称该关系为二元关系（Binary Relation）。</p>
-<p><strong>4. 关系模式（Relation Schema）的定义</strong></p>
-<p>关系的描述称为关系模式（Relation Schema），关系模式可以形式化地表示为</p>
-<p>$R<U,D,Dom,F>$</p>
-<p>式中，𝘙 为关系名，𝘜 为关系的属性集合，𝘋 为属性集合 𝘜 中属性的数据域，𝘋𝘰𝘮 为属性到域的映射的集合，𝘍 为属性间数据的依赖关系集合。</p>
-<h1 id="二、关系中的基本名词"><a href="#二、关系中的基本名词" class="headerlink" title="二、关系中的基本名词"></a>二、关系中的基本名词</h1><p><strong>1. 元组</strong></p>
-<p>关系表中的每一横行称作一个元组（Tuple），组成元组的元素为分量。数据库中的一个实体或实体间的一个联系均使用一个元组表示。</p>
-<p><strong>2. 属性</strong></p>
-<p>关系中的每一列称为一个属性（Attribute）。属性具有型和值两层含义：属性的型指属性名和属性取值域；属性值指属性具体的取值。由于关系中的属性名具有标识列的作用，因而同一关系中的属性名不能相同。关系中往往有多个属性，属性用于表示实体的特征。</p>
-<p><strong>3. 候选码和主码</strong></p>
-<p>若关系中的某一属性值（或单个属性）的值能唯一地标识一个元组，则称该属性组（或属性）为候选码（Candidata Key）。为数据管理方便，当一个关系有多个候选码时，应选定其中的一个候选码为主码（Primary Key）。当然，如果关系中只有一个候选码，这个唯一的候选码就是主码。</p>
-<p><strong>4. 全码</strong></p>
-<p>若关系的候选码中只包含一个属性，则称它为单属性码；若候选码是由多个属性构成的，则称它为多属性码。若关系中只有一个候选码，且这个候选码中包括全部属性，则这种候选码为全码（All-Key）。全码是候选码的特例，它说明该关系中不存在属性之间相互决定的情况。</p>
-<p><strong>5. 主属性和非主属性</strong></p>
-<p>关系中，候选码中的属性称为主属性（Prime Attribute），不包含在任何候选码中的属性称为非主属性（Non-Key Attribute）。</p>
+<h1 id="一、函数依赖（Functional-Dependency）"><a href="#一、函数依赖（Functional-Dependency）" class="headerlink" title="一、函数依赖（Functional Dependency）"></a>一、函数依赖（Functional Dependency）</h1><p><strong>（1）函数依赖</strong></p>
+<p>设 𝘙&lt;𝘜&gt; 是属性集合 𝘜 上的关系模式，𝘟、𝘠 是 𝘜 的子集。若对于 𝘙&lt;𝘜&gt; 的任意一个可能的关系 𝘳，𝘳 中不存在两个元组在 𝘟 上的属性值相等，而 𝘠 上的属性值不等，则称 𝘟 函数确定 𝘠 函数，或 𝘠 函数依赖于 𝘟 函数，记作 𝘟 $\to$ 𝘠，其中，𝘟 叫做决定因素（Determinant），𝘠 叫做依赖因素（Dependent）。若 𝘠 不函数依赖于 𝘟，则记作 𝘟 $\nrightarrow$ 𝘠。若 𝘟 $\to$ 𝘠，𝘠 $\to$ 𝘟，则记作 𝘟 $\leftrightarrow$ 𝘠。</p>
+<p>函数依赖具有自反律：若 𝘟 $\to$ 𝘠 在 𝘙&lt;𝘜&gt; 上成立，则对任何 𝘠’ $\subset$ 𝘠，有 𝘟 $\to$ 𝘠’ 成立。</p>
+<p>例如，对于教学关系模式：教学 &lt;𝘜，𝘍&gt;</p>
+<p>𝘜＝｛学号，姓名，年龄，性别，系名，系主任，课程名，成绩｝</p>
+<p>𝘍＝｛学号 $\to$ 姓名，学号 $\to$ 年龄，学号 $\to$ 性别，学号 $\to$ 系名，系名 $\to$ 系主任，（学号，课程名） $\to$ 成绩｝</p>
+<p><strong>（2）平凡函数依赖</strong></p>
+<p>𝘟 $\to$ 𝘠，但 𝘠 $\nsubseteq$ 𝘟，则称 𝘟 $\to$ 𝘠 是非平凡函数依赖。若不特别声明，总是讨论非平凡函数依赖。</p>
+<p>𝘟 $\to$ 𝘠，但 𝘠 $\subseteq$ 𝘟，则称 𝘟 $\to$ 𝘠 是平凡函数依赖。</p>
+<p><strong>（3）完全函数依赖</strong></p>
+<p>在 𝘙&lt;𝘜&gt; 中，如果 𝘟 $\to$ 𝘠，并且对于 𝘟 的任何一个真子集 𝘟’，都有 𝘟’ $\nrightarrow$ 𝘠，则称 𝘠 对 𝘟 完全函数依赖，记作 𝘟 $\stackrel{F}{\longrightarrow}$ 𝘠。如果 𝘟 $\to$ 𝘠，但 𝘠 不完全函数依赖于 𝘟，则称 𝘠 对 𝘟 部分函数依赖，记作 𝘟 $\stackrel{P}{\longrightarrow}$ 𝘠。</p>
+<p>例如，在教学关系模式中，学号和课程名为主码，而（学号，课程名）$\stackrel{F}{\longrightarrow}$ 成绩，（学号，课程名）$\stackrel{P}{\longrightarrow}$ 姓名。</p>
+<p><strong>（4）传递函数依赖</strong></p>
+<p>在 𝘙&lt;𝘜&gt; 中，如果 𝘟 $\to$ 𝘠，（𝘠 $\nsubseteq$ 𝘟），𝘠 $\nrightarrow$ 𝘟，𝘠 $\to$ 𝘡，则称 𝘡 对 𝘟 传递函数依赖，记作 𝘟 $\stackrel{传递}{\longrightarrow}$ 𝘡。</p>
+<p>例如，在教学关系模式中，因为存在：学号 $\to$ 系名，系名 $\to$ 系主任，所以也存在：学号 $\to$ 系主任。</p>
+<h1 id="二、多值依赖（Multivalued-Dependency）"><a href="#二、多值依赖（Multivalued-Dependency）" class="headerlink" title="二、多值依赖（Multivalued Dependency）"></a>二、多值依赖（Multivalued Dependency）</h1><p><strong>（1）多值依赖</strong></p>
+<p>设 𝘙&lt;𝘜&gt; 是属性集 𝘜 上的一个关系模式，𝘟、𝘠、𝘡 是 𝘜 的子集，并且 𝘡＝𝘜 $-$ 𝘟 $-$ 𝘠。关系模式 𝘙&lt;𝘜&gt; 中多值依赖 𝘟 $\to\to$ 𝘠 成立，当且仅当对 𝘙&lt;𝘜&gt; 的任一关系 𝘳，给定的一对（𝘹，𝘻）值，有一组 𝘠 的值与之对应，这组值仅仅决定于 𝘹 值而与 𝘻 值无关。</p>
+<p>对于多值依赖的另一个等价的形式化定义是：在 𝘙&lt;𝘜&gt; 的任一关系 𝘳 中，如果存在元组 𝘵、𝘴 使得 𝘵[𝘟]＝𝘴[𝘟]，那么就必然存在元组 𝘸、𝘷 $\in$ 𝘳（𝘸、𝘷 可以与 𝘴、𝘵 相同），使得 𝘸[𝘟]＝𝘷[𝘟]＝𝘵[𝘟]，而 𝘸[𝘠]＝𝘵[𝘠]，𝘸[𝘡]＝𝘴[𝘡]，𝘷[𝘠]＝𝘴[𝘠]，𝘷[𝘡]＝𝘵[𝘡]（即<strong>交换 𝘴、𝘵 元组的 𝘠 值所得的两个新元组必在关系 𝘳 中</strong>），则 𝘠 多值依赖于 𝘟，记为 𝘟 $\to\to$ 𝘠。这里，𝘟、𝘠 是 𝘜 的子集，𝘡＝𝘜 $-$ 𝘟 $-$ 𝘠。</p>
+<p>多值依赖具有对称性，即：若 𝘟 $\to\to$ 𝘠，则 𝘟 $\to\to$ 𝘡，其中 𝘡＝𝘜 $-$ 𝘟 $-$ 𝘠。</p>
+<p>函数依赖是多值依赖的特殊情况，即：若  𝘟 $\to$ 𝘠，则  𝘟 $\to\to$ 𝘠。这是因为当 𝘟 $\to$ 𝘠 时，对 𝘟 的每一个值 𝘹，𝘠 都有一个确定的值 𝘺 与之对应，所以 𝘟 $\to\to$ 𝘠。</p>
+<p>多值依赖的有效性与属性集的范围有关。在关系模式 𝘙 中，函数依赖 𝘟 $\to$ 𝘠 的有效性仅仅决定于 𝘟、𝘠 这两个属性集；在多值依赖中，𝘟 $\to\to$ 𝘠 在 𝘜 上是否成立，不仅要检查 𝘟、𝘠 上的值，而且要检查 𝘡＝𝘜 $-$ 𝘟 $-$ 𝘠 上的值。因此，如果 𝘟 $\to\to$ 𝘠 在 𝘞（𝘞 $\subset$ 𝘜）上成立，则在 𝘜 上则不一定成立。除此之外，对多值依赖  𝘟 $\to\to$ 𝘠，若在 𝘙 上成立，也并不能断言对于任何 𝘠’ $\subset$ 𝘠，有  𝘟 $\to\to$ 𝘠’ 成立。</p>
+<p><strong>（2）平凡的多值依赖</strong></p>
+<p>若 𝘟 $\to\to$ 𝘠，而 𝘡＝$\varnothing$ ，即 𝘡 为空集，则称 𝘟 $\to\to$ 𝘠 为平凡的多值依赖。即对于 𝘙&lt;𝘟，𝘠&gt;，如果有 𝘟 $\to\to$ 𝘠 成立，则 𝘟 $\to\to$ 𝘠 为平凡的多值依赖。</p>
+<h1 id="三、连接依赖（Join-Dependency）"><a href="#三、连接依赖（Join-Dependency）" class="headerlink" title="三、连接依赖（Join Dependency）"></a>三、连接依赖（Join Dependency）</h1><p>设 𝘙&lt;𝘜&gt; 是属性集 𝘜 上的关系模式，$x_1,x_2,\cdots,x_n$ 是 𝘜 的子集，并且 $\bigcup\limits^n_{i=1}x_i=U$，如果 $R=\Join \mathop{R}\limits^n_{i=1}[x_i]$ 对 𝘙 的一切关系均成立，则称 𝘙 在 $x_1,x_2,\cdots,x_n$ 上具有 𝘯 目连接依赖，记作：$\Join [x_1][x_2]\cdots[x_n]$。</p>
+<p>连接依赖不能直接从语义中推出，只能从连接运算中反映出来。</p>
 
     </div>
 
@@ -263,11 +262,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2023/03/12/%E3%80%90%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA%E3%80%912.%E6%95%B0%E6%8D%AE%E4%BE%9D%E8%B5%96/" rel="next" title="【关系数据理论】2.数据依赖">
-      【关系数据理论】2.数据依赖 <i class="fa fa-chevron-right"></i>
+    <a href="/2023/03/12/%E3%80%90%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA%E3%80%911.%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="prev" title="【关系数据理论】1.关系数据结构">
+      <i class="fa fa-chevron-left"></i> 【关系数据理论】1.关系数据结构
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -326,7 +325,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%85%B3%E7%B3%BB%E7%9A%84%E6%95%B0%E5%AD%A6%E5%AE%9A%E4%B9%89"><span class="nav-text">一、关系的数学定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%85%B3%E7%B3%BB%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%90%8D%E8%AF%8D"><span class="nav-text">二、关系中的基本名词</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%EF%BC%88Functional-Dependency%EF%BC%89"><span class="nav-text">一、函数依赖（Functional Dependency）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%A4%9A%E5%80%BC%E4%BE%9D%E8%B5%96%EF%BC%88Multivalued-Dependency%EF%BC%89"><span class="nav-text">二、多值依赖（Multivalued Dependency）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E8%BF%9E%E6%8E%A5%E4%BE%9D%E8%B5%96%EF%BC%88Join-Dependency%EF%BC%89"><span class="nav-text">三、连接依赖（Join Dependency）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
