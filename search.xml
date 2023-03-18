@@ -95,4 +95,18 @@
         <category>None</category>
       </categories>
   </entry>
+  <entry>
+    <title>link</title>
+    <url>/2023/03/19/link/</url>
+    <content><![CDATA[<p>&emsp;</p>
+<span id="more"></span>
+<p><iframe name="web" width="100%"  frameborder=0height="100%"  src="./利用 Github Pages 搭建 Hexo 博客.html"></iframe> </p>
+<script language="javascript">
+if(window.parent.length>0{window.parent.document.all.newtest.style.height=document.body.scrollHeight;} </script>
+
+]]></content>
+      <categories>
+        <category>None</category>
+      </categories>
+  </entry>
 </search>
