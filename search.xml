@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2048思想指南</title>
+    <url>/2048%20%E6%80%9D%E6%83%B3%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>&emsp;</p>
+<span id="more"></span>
+<p>2048 框架结构</p>
+<div class="pdfobject-container" data-target="2048" data-height="思想指南.pdf"></div>]]></content>
+      <categories>
+        <category>unclassified</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Flappy Bird 思想指南</title>
+    <url>/FlappyBird%20%E6%80%9D%E6%83%B3%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>&emsp;</p>
+<span id="more"></span>
+<p><a href="/html/Flappy Bird.drawio.html">Flappy Bird 框架结构</a></p>
+<div class="pdfobject-container" data-target="FlappyBird思想指南.pdf" data-height="500px"></div>]]></content>
+      <categories>
+        <category>unclassified</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Github Pages博客配置指南</title>
-    <url>/Github%20Pages%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</url>
+    <url>/Github%20Pages%20%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>&emsp;</p>
 <span id="more"></span>
 <h1 id="前置依赖环境"><a href="#前置依赖环境" class="headerlink" title="前置依赖环境"></a>前置依赖环境</h1><ul>
@@ -115,28 +137,6 @@
 <p>通过快捷键 <code>win+R</code> 输入 <code>regedit</code>，进入路径 <code>计算机\HKEY_CLASSES_ROOT\*\shell</code>，新建项并命名为 <code>Post</code>，双击 <code>默认项</code>，添加数值数据 <code>PostToHexo</code>；</p>
 <p>在<code>Post</code> 下再次新建项 <code>command</code>，双击 <code>默认项</code>，添加的数值数据是 PostToHexo.bat 文件所在路径，并加上 <code>”%1&quot;</code>，最终结果为：<code>&quot;PostToHexo.bat文件路径&quot; &quot;%1&quot;</code>。</p>
 ]]></content>
-      <categories>
-        <category>unclassified</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Flappy Bird 思想指南</title>
-    <url>/FlappyBird%E6%80%9D%E6%83%B3%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>&emsp;</p>
-<span id="more"></span>
-<p><a href="/html/Flappy Bird.drawio.html">Flappy Bird 框架结构</a></p>
-<div class="pdfobject-container" data-target="FlappyBird思想指南.pdf" data-height="500px"></div>]]></content>
-      <categories>
-        <category>unclassified</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>2048思想指南</title>
-    <url>/2048%20%E6%80%9D%E6%83%B3%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>&emsp;</p>
-<span id="more"></span>
-<p>2048 框架结构</p>
-<div class="pdfobject-container" data-target="2048" data-height="思想指南.pdf"></div>]]></content>
       <categories>
         <category>unclassified</category>
       </categories>
