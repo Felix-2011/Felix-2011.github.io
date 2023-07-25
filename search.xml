@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2048 思想指南</title>
-    <url>/2048%20%E6%80%9D%E6%83%B3%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>&emsp;</p>
-<span id="more"></span>
-<p>2048 框架结构</p>
-<div class="pdfobject-container" data-target="2048思想指南.pdf" data-height="500px"></div>]]></content>
-      <categories>
-        <category>unclassified</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Flappy Bird 思想指南</title>
-    <url>/FlappyBird%20%E6%80%9D%E6%83%B3%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>&emsp;</p>
-<span id="more"></span>
-<p><a href="/html/Flappy Bird.drawio.html">Flappy Bird 框架结构</a></p>
-<div class="pdfobject-container" data-target="FlappyBird思想指南.pdf" data-height="500px"></div>]]></content>
-      <categories>
-        <category>unclassified</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Github Pages 博客配置指南</title>
     <url>/Github%20Pages%20%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>&emsp;</p>
